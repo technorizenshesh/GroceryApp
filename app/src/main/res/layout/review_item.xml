@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+<androidx.cardview.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:elevation="@dimen/_10sdp"
+    app:cardElevation="@dimen/_10sdp"
+    app:cardMaxElevation="@dimen/_10sdp"
+    app:cardCornerRadius="@dimen/_5sdp"
+    android:layout_marginHorizontal="@dimen/_10sdp"
+    android:layout_marginVertical="@dimen/_5sdp"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_10sdp"
+        >
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_product"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_60sdp"
+            android:visibility="gone"
+            android:layout_marginRight="@dimen/_8sdp"
+            android:src="@drawable/ic_review_user" />
+
+        <TextView
+            android:id="@+id/tvtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_toRightOf="@+id/iv_product"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="Rahma Putri"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_13sdp" />
+
+        <TextView
+            android:id="@+id/tvQuantity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvtitle"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:layout_toRightOf="@+id/iv_product"
+            android:fontFamily="@font/montserrat_medium"
+            android:text="2 minutes ago"
+            android:textColor="@color/colorGray"
+            android:textSize="@dimen/_13sdp" />
+
+        <TextView
+            android:id="@+id/tvReivew"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvQuantity"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_toRightOf="@+id/iv_product"
+            android:fontFamily="@font/montserrat_regular"
+            android:text="Each dish feels like I’m in a new fantasy movie when I eat it! "
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp" />
+        <RatingBar
+            android:id="@+id/ratingBar"
+            style="?android:attr/ratingBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:progressTint="@color/rating_bar"
+            android:layout_below="@id/tvReivew"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_toRightOf="@id/iv_product"
+            android:rating="5" />
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
+    </RelativeLayout>
+
+</layout>

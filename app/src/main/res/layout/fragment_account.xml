@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".fragments.CartFragment">
+        <TextView
+            android:id="@+id/tvHome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/ivProfile"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text="@string/order"
+            android:textAllCaps="true"
+            android:background="@color/light_blue"
+            android:padding="@dimen/_15sdp"
+            android:textColor="@color/app_color"
+            android:textSize="@dimen/_13sdp" />
+
+        <RelativeLayout
+            android:id="@+id/rlOrders"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            >
+            <ImageView
+                android:id="@+id/ivOrder"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:src="@drawable/ic_orders"/>
+
+            <TextView
+                android:id="@+id/tvOrders"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/ivOrder"
+                android:drawableRight="@drawable/ic_right"
+                android:fontFamily="@font/montserrat_semibold"
+                android:padding="@dimen/_15sdp"
+                android:text="@string/orders"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_13sdp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rlReturn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <ImageView
+                android:id="@+id/ivReturn"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:src="@drawable/ic_return"/>
+
+            <TextView
+                android:id="@+id/tvReturns"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/ivReturn"
+                android:drawableRight="@drawable/ic_right"
+                android:fontFamily="@font/montserrat_semibold"
+                android:padding="@dimen/_15sdp"
+                android:text="@string/returns"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_13sdp" />
+
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/ivProfile"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text="Account Details"
+            android:background="@color/light_blue"
+            android:padding="@dimen/_15sdp"
+            android:textColor="@color/app_color"
+            android:textAllCaps="true"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:textSize="@dimen/_13sdp" />
+
+        <RelativeLayout
+            android:id="@+id/rlPersonalDetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            >
+            <ImageView
+                android:id="@+id/ivPersonal"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:src="@drawable/ic_personal_detail"/>
+
+            <TextView
+                android:id="@+id/tvPersonal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/ivPersonal"
+                android:drawableRight="@drawable/ic_right"
+                android:fontFamily="@font/montserrat_semibold"
+                android:padding="@dimen/_15sdp"
+                android:text="@string/personal_details"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_13sdp" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <ImageView
+                android:id="@+id/ivAddressBook"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:src="@drawable/ic_address_book"/>
+
+            <TextView
+                android:id="@+id/tvAddressBook"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/ivAddressBook"
+                android:drawableRight="@drawable/ic_right"
+                android:fontFamily="@font/montserrat_semibold"
+                android:padding="@dimen/_15sdp"
+                android:text="@string/address_book"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_13sdp" />
+
+
+        </RelativeLayout>
+
+
+
+        <RelativeLayout
+            android:id="@+id/rlProductReview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <ImageView
+                android:id="@+id/ivProductReviews"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:src="@drawable/ic_product_review"/>
+
+            <TextView
+                android:id="@+id/tvProductReviews"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/ivProductReviews"
+                android:drawableRight="@drawable/ic_right"
+                android:fontFamily="@font/montserrat_semibold"
+                android:padding="@dimen/_15sdp"
+                android:text="@string/product_reviews"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_13sdp" />
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/rlChat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <ImageView
+                android:id="@+id/ivChat"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:src="@drawable/ic_chat"/>
+
+            <TextView
+                android:id="@+id/tvChat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/ivChat"
+                android:drawableRight="@drawable/ic_right"
+                android:fontFamily="@font/montserrat_semibold"
+                android:padding="@dimen/_15sdp"
+                android:text="@string/chat"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_13sdp" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <ImageView
+                android:id="@+id/ivAccountSettings"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:src="@drawable/ic_account_settings"/>
+
+            <TextView
+                android:id="@+id/tvAccountSettings"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/ivAccountSettings"
+                android:drawableRight="@drawable/ic_right"
+                android:fontFamily="@font/montserrat_semibold"
+                android:padding="@dimen/_15sdp"
+                android:text="@string/acount_settings"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_13sdp" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/light_blue"
+            android:layout_marginTop="@dimen/_5sdp"
+
+            >
+
+            <TextView
+                android:id="@+id/tvCreditTitel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_semibold"
+                android:padding="@dimen/_15sdp"
+                android:text="CREDIT"
+                android:textAllCaps="true"
+                android:textColor="@color/app_color"
+                android:textSize="@dimen/_13sdp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/tvCreditTitel"
+                android:text="AVAILABBLE CREDIT: $00.00"
+                android:fontFamily="@font/montserrat_bold"
+                android:padding="@dimen/_15sdp"
+                android:textSize="@dimen/_13sdp"
+                android:textColor="@color/app_color"
+                android:layout_marginLeft="@dimen/_10sdp"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <ImageView
+                android:id="@+id/ivCreditandRefund"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:src="@drawable/ic_credit"/>
+
+            <TextView
+                android:id="@+id/tvCreditAndRefund"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/ivCreditandRefund"
+                android:drawableRight="@drawable/ic_right"
+                android:fontFamily="@font/montserrat_semibold"
+                android:padding="@dimen/_15sdp"
+                android:text="@string/credit_and_refunds"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_13sdp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <ImageView
+                android:id="@+id/ivRedeem"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:src="@drawable/ic_account_settings"/>
+
+            <TextView
+                android:id="@+id/tvRedeem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/ivRedeem"
+                android:drawableRight="@drawable/ic_right"
+                android:fontFamily="@font/montserrat_semibold"
+                android:padding="@dimen/_15sdp"
+                android:text="@string/redeem_gift_voucher"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_13sdp" />
+
+
+        </RelativeLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:layout_marginBottom="@dimen/_15sdp"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            android:background="@drawable/button_bg"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text="@string/logout"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12sdp" />
+
+
+
+    </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

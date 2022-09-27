@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activities.ReceivedSomeoneElse">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_60sdp"
+        android:visibility="visible"
+        android:background="@color/app_color"
+       >
+
+        <ImageView
+            android:id="@+id/img_header"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:src="@drawable/ic_close"
+            android:padding="@dimen/_2sdp"
+            android:layout_centerVertical="true"
+            android:scaleType="centerInside"
+            app:tint="@color/white" />
+
+        <TextView
+            android:id="@+id/tvtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="@string/received_someone_else_s_order1"
+            android:textSize="@dimen/_13sdp"
+            android:layout_gravity="center"
+            android:ems="10"
+            android:gravity="center"
+            android:fontFamily="@font/montserrat_bold"/>
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:text="@string/please_chat_with_one_of_our_agents_so_we_can_look_further_into_this_issue"
+        android:textSize="@dimen/_13sdp"
+        android:layout_gravity="center"
+        android:layout_below="@id/toolbar"
+        android:layout_margin="@dimen/_20sdp"
+        android:fontFamily="@font/montserrat_medium"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_bg"
+        android:fontFamily="@font/montserrat_semibold"
+        android:text="@string/chat_with_agent"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="@dimen/_15sdp"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_12sdp" />
+
+</RelativeLayout>
+</layout>

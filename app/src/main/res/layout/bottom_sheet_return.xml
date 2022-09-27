@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout   xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/top_white_cornors"
+    android:layout_marginTop="@dimen/_50sdp"
+    android:padding="@dimen/_15sdp"
+    android:minWidth="1000dp"
+    android:minHeight="400dp"
+    android:id="@+id/root">
+
+       <View
+           android:layout_width="@dimen/_35sdp"
+           android:layout_height="@dimen/_3sdp"
+           android:layout_gravity="center_horizontal"
+           android:background="@color/gray"
+           />
+
+       <TextView
+           android:id="@+id/textView"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_centerInParent="true"
+           android:layout_gravity="center_horizontal"
+           android:layout_marginTop="@dimen/_10sdp"
+           android:fontFamily="@font/montserrat_bold"
+           android:text="Returns"
+           android:textColor="@color/black"
+           android:textSize="@dimen/_25sdp" />
+
+       <TextView
+           android:id="@+id/tvOrders"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:drawableRight="@drawable/ic_right"
+           android:fontFamily="@font/montserrat_semibold"
+           android:padding="@dimen/_15sdp"
+           android:layout_marginTop="@dimen/_10sdp"
+           android:text="@string/received_someone_else_s_order"
+           android:textColor="@color/black"
+           android:drawableTint="@color/app_color"
+           android:textSize="@dimen/_13sdp" />
+
+       <TextView
+           android:id="@+id/tvItemQuality"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:drawableRight="@drawable/ic_right"
+           android:fontFamily="@font/montserrat_semibold"
+           android:padding="@dimen/_15sdp"
+           android:text="@string/item_quality_issues"
+           android:textColor="@color/black"
+           android:drawableTint="@color/app_color"
+           android:textSize="@dimen/_13sdp" />
+
+       <TextView
+           android:id="@+id/tvMissing"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:drawableRight="@drawable/ic_right"
+           android:fontFamily="@font/montserrat_semibold"
+           android:padding="@dimen/_15sdp"
+           android:text="Missing or incorrect Items"
+           android:textColor="@color/black"
+           android:drawableTint="@color/app_color"
+           android:textSize="@dimen/_13sdp" />
+
+       <TextView
+           android:id="@+id/tvOrderLate"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:drawableRight="@drawable/ic_right"
+           android:fontFamily="@font/montserrat_semibold"
+           android:padding="@dimen/_15sdp"
+           android:text="Order arrived late"
+           android:textColor="@color/black"
+           android:drawableTint="@color/app_color"
+           android:textSize="@dimen/_13sdp" />
+
+       <TextView
+           android:id="@+id/tvSomethingsElse"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:drawableRight="@drawable/ic_right"
+           android:fontFamily="@font/montserrat_semibold"
+           android:padding="@dimen/_15sdp"
+           android:text="It’s something else"
+           android:textColor="@color/black"
+           android:drawableTint="@color/app_color"
+           android:textSize="@dimen/_13sdp" />
+
+       <TextView
+           android:id="@+id/tvHelp"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:drawableRight="@drawable/ic_right"
+           android:fontFamily="@font/montserrat_semibold"
+           android:padding="@dimen/_15sdp"
+           android:text="@string/help"
+           android:textColor="@color/black"
+           android:drawableTint="@color/app_color"
+           android:textSize="@dimen/_13sdp" />
+
+</LinearLayout>

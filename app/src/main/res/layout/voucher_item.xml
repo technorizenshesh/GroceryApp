@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_120sdp"
+    android:orientation="horizontal"
+    android:background="@drawable/ic_voucher"
+    android:layout_margin="@dimen/_8sdp"
+    >
+<LinearLayout
+    android:layout_width="0dp"
+    android:layout_height="match_parent"
+    android:layout_weight=".5"
+    >
+</LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight=".5"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:id="@+id/tvtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="Special Deal For You 10 % off"
+            android:textSize="@dimen/_14sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:fontFamily="@font/montserrat_regular"/>
+
+        <TextView
+            android:id="@+id/tvCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/white_button_bg"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:text="@string/use_code"
+            android:textAllCaps="false"
+            android:textSize="@dimen/_11sdp"
+            android:padding="@dimen/_8sdp"
+            android:textColor="@color/app_color"
+            />
+
+    </LinearLayout>
+</LinearLayout>
+
+    </LinearLayout>
+</layout>
