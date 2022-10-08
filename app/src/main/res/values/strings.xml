@@ -104,6 +104,12 @@
     <string name="add_product_review">Add Product Review</string>
     <string name="privacy_policy">Privacy Policy</string>
     <string name="terms_and_condition">Terms and Condition</string>
-
-
+    <string name="default_notification_channel_id">1</string>
+    <string name="best_offers">Best Offers</string>
+    <string name="see_all">See all</string>
+    <string name="order_received">Order Received</string>
+    <string name="order_accepted_by_admin">Order Accepted By Admin</string>
+    <string name="processing">Processing</string>
+    <string name="order_picked_by_driver">Order Picked By Driver</string>
+    <string name="order_delivered">Order Delivered</string>
 </resources>

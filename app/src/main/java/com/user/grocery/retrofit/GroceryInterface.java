@@ -7,6 +7,8 @@ import com.user.grocery.models.SuccessResGetCategories;
 import com.user.grocery.models.SuccessResGetChat;
 import com.user.grocery.models.SuccessResGetFavProduct;
 import com.user.grocery.models.SuccessResGetMyOrders;
+import com.user.grocery.models.SuccessResGetNotification;
+import com.user.grocery.models.SuccessResGetNotificationCount;
 import com.user.grocery.models.SuccessResGetProductDetails;
 import com.user.grocery.models.SuccessResGetProducts;
 import com.user.grocery.models.SuccessResGetProductsByCategory;
@@ -143,5 +145,13 @@ public interface GroceryInterface {
     @FormUrlEncoded
     @POST("get_chat")
     Call<SuccessResGetChat> getChat(@FieldMap Map<String, String> paramHashMap);
+
+    @FormUrlEncoded
+    @POST("getNotification")
+    Call<SuccessResGetNotification> getNotification(@FieldMap Map<String, String> paramHashMap);
+
+    @FormUrlEncoded
+    @POST("getnotificationCount")
+    Call<SuccessResGetNotificationCount> getNotificationCount(@FieldMap Map<String, String> paramHashMap);
 
 }

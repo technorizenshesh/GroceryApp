@@ -42,7 +42,7 @@ public class SuccessResGetMyOrders implements Serializable {
         this.success = success;
     }
 
-    public class Result {
+    public class Result implements Serializable {
 
         @SerializedName("booking_id")
         @Expose
@@ -65,6 +65,18 @@ public class SuccessResGetMyOrders implements Serializable {
         @SerializedName("bookig_status")
         @Expose
         public String bookigStatus;
+        @SerializedName("driver_id")
+        @Expose
+        public String driverId;
+        @SerializedName("address_id")
+        @Expose
+        public String addressId;
+        @SerializedName("notification_status")
+        @Expose
+        public String notificationStatus;
+        @SerializedName("signature_image")
+        @Expose
+        public String signatureImage;
         @SerializedName("price")
         @Expose
         public String price;
@@ -143,6 +155,38 @@ public class SuccessResGetMyOrders implements Serializable {
             this.bookigStatus = bookigStatus;
         }
 
+        public String getDriverId() {
+            return driverId;
+        }
+
+        public void setDriverId(String driverId) {
+            this.driverId = driverId;
+        }
+
+        public String getAddressId() {
+            return addressId;
+        }
+
+        public void setAddressId(String addressId) {
+            this.addressId = addressId;
+        }
+
+        public String getNotificationStatus() {
+            return notificationStatus;
+        }
+
+        public void setNotificationStatus(String notificationStatus) {
+            this.notificationStatus = notificationStatus;
+        }
+
+        public String getSignatureImage() {
+            return signatureImage;
+        }
+
+        public void setSignatureImage(String signatureImage) {
+            this.signatureImage = signatureImage;
+        }
+
         public String getPrice() {
             return price;
         }
@@ -198,7 +242,6 @@ public class SuccessResGetMyOrders implements Serializable {
         public void setImage(String image) {
             this.image = image;
         }
-
     }
 
 }

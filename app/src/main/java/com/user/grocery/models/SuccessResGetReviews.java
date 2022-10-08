@@ -10,7 +10,7 @@ public class SuccessResGetReviews implements Serializable {
 
     @SerializedName("average_Rating")
     @Expose
-    public Integer averageRating;
+    public String averageRating;
     @SerializedName("result")
     @Expose
     public List<Result> result = null;
@@ -21,11 +21,11 @@ public class SuccessResGetReviews implements Serializable {
     @Expose
     public Integer success;
 
-    public Integer getAverageRating() {
+    public String getAverageRating() {
         return averageRating;
     }
 
-    public void setAverageRating(Integer averageRating) {
+    public void setAverageRating(String averageRating) {
         this.averageRating = averageRating;
     }
 
@@ -53,7 +53,7 @@ public class SuccessResGetReviews implements Serializable {
         this.success = success;
     }
 
-    public class Result {
+    public class Result implements Serializable {
 
         @SerializedName("rating_id")
         @Expose

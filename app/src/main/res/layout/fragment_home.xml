@@ -28,6 +28,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:visibility="gone"
         >
         <ImageView
             android:layout_width="@dimen/_20sdp"
@@ -39,7 +40,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/white"
-            android:text="Home"
+            android:text="@string/home"
             android:layout_marginLeft="@dimen/_10sdp"
             android:drawablePadding="@dimen/_5sdp"
             android:gravity="center_horizontal"
@@ -146,14 +147,15 @@
                 android:textSize="@dimen/_13sdp" />
 
             <TextView
+                android:id="@+id/seeAll"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/app_color"
-                android:text="See all"
                 android:layout_alignParentRight="true"
-                android:textSize="@dimen/_11sdp"
                 android:layout_centerVertical="true"
-                android:fontFamily="@font/montserrat_bold"/>
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/see_all"
+                android:textColor="@color/app_color"
+                android:textSize="@dimen/_11sdp" />
 
         </RelativeLayout>
 
@@ -169,8 +171,6 @@
             />
 
     </LinearLayout>
-
-
 
         </LinearLayout>
 

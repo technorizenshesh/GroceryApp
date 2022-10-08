@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.google.gson.Gson;
 import com.user.grocery.R;
 import com.user.grocery.activities.OrderStatusAct;
 import com.user.grocery.databinding.OrderItemBinding;
@@ -51,11 +52,19 @@ public class OrdersAdapters extends RecyclerView.Adapter<OrdersAdapters.OffersVi
 
         tvTitle.setOnClickListener(v ->
                 {
-                    context.startActivity(new Intent(context, OrderStatusAct.class));
+                    Gson gson = new Gson();
+                    String myJson = gson.toJson(myOrdersList.get(position));
+                    context.startActivity(new Intent(context, OrderStatusAct.class).putExtra("myjson", myJson));
                 }
                 );
 
-        tvTitle.setText("Order Status: "+myOrdersList.get(position).getBookigStatus());
+        if(myOrdersList.get(position).getBookigStatus().equalsIgnoreCase("Pending"))
+        {
+            tvTitle.setText("Order Status: ORDER RECEIVED");
+        }else
+        {
+            tvTitle.setText("Order Status: "+myOrdersList.get(position).getBookigStatus());
+        }
 
         Glide.with(context)
                 .load(myOrdersList.get(position).getImage())

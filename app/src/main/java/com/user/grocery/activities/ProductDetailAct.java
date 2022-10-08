@@ -68,17 +68,12 @@ public class ProductDetailAct extends AppCompatActivity implements ItemClickList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
          binding = DataBindingUtil.setContentView(this,R.layout.activity_product_detail);
-
          binding.nestedScrollView.setNestedScrollingEnabled(false);
-
          apiInterface = ApiClient.getClient().create(GroceryInterface.class);
-
          productId = getIntent().getExtras().getString("productId");
          categoryId = getIntent().getExtras().getString("categoryId");
-
          binding.header.imgHeader.setOnClickListener(v -> finish());
          binding.header.tvtitle.setText(getString(R.string.products_details));
-
          binding.btnNext.setOnClickListener(v ->
                 {
                     Intent intent = new Intent(this, AddressBookAct.class);
@@ -90,15 +85,12 @@ public class ProductDetailAct extends AppCompatActivity implements ItemClickList
                     startActivity(intent);
                 }
                 );
-
         productDetailsViewModel = ViewModelProviders.of(ProductDetailAct.this).get(ProductDetailsViewModel.class);
         updateFavViewModel = ViewModelProviders.of(ProductDetailAct.this).get(UpdateFavViewModel.class);
         suggestedProductsViewModel = ViewModelProviders.of(ProductDetailAct.this).get(SuggestedProductsViewModel.class);
         getProductDetails();
         getProductsList();
-
         getRating();
-
         binding.ivFv.setOnClickListener(v ->
                 {
                     updateFav();
@@ -108,7 +100,6 @@ public class ProductDetailAct extends AppCompatActivity implements ItemClickList
 
     public void getRating()
     {
-
         DataManager.getInstance().showProgressMessage(ProductDetailAct.this, getString(R.string.please_wait));
         Map<String,String> map = new HashMap<>();
         map.put("rating_product_id",productId);
@@ -180,12 +171,9 @@ public class ProductDetailAct extends AppCompatActivity implements ItemClickList
     private ArrayList<Products> productsArrayList = new ArrayList<>();
     public void getProductsList()
     {
-        String userId = SharedPreferenceUtility.getInstance(ProductDetailAct.this).getString(USER_ID);
         DataManager.getInstance().showProgressMessage(ProductDetailAct.this, getString(R.string.please_wait));
         suggestedProductsViewModel.getUserProfile(categoryId).observe(ProductDetailAct.this, articleResponse -> {
-
             DataManager.getInstance().hideProgressMessage();
-
             if (articleResponse != null) {
 
                 DataManager.getInstance().hideProgressMessage();
@@ -193,13 +181,8 @@ public class ProductDetailAct extends AppCompatActivity implements ItemClickList
                 productsArrayList.addAll(articleResponse.getUserData());
 
                 bestSellerAdapters = new BestSellerAdapters(ProductDetailAct.this,productsArrayList,ProductDetailAct.this);
-
                 binding.setProductsAdapter(bestSellerAdapters);
-
-//                adapter.notifyDataSetChanged();
-
             }
-
         });
     }
 
@@ -214,6 +197,8 @@ public class ProductDetailAct extends AppCompatActivity implements ItemClickList
     public void packageItemClick(View v, int id, String category) {
 
         selectPosition = id;
+
+        binding.tvPrice.setText("$"+productDetails.getProductPackaging().get(selectPosition).getPrice());
 
     }
 }

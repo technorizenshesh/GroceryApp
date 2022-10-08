@@ -57,6 +57,7 @@
             android:id="@+id/rlReturn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:visibility="gone"
             >
             <ImageView
                 android:id="@+id/ivReturn"
@@ -207,12 +208,12 @@
                 android:textColor="@color/black"
                 android:textSize="@dimen/_13sdp" />
 
-
         </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:visibility="gone"
             >
             <ImageView
                 android:id="@+id/ivAccountSettings"
@@ -324,7 +325,7 @@
         </RelativeLayout>
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnLogin"
+            android:id="@+id/btnLogout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_30sdp"

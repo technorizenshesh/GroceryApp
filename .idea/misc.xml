@@ -5,13 +5,14 @@
       <map>
         <entry key="../../../../layout/custom_preview.xml" value="0.2421875" />
         <entry key="app/src/main/res/drawable-v24/bottom_right_5.xml" value="0.149" />
+        <entry key="app/src/main/res/drawable-v24/circle_white.xml" value="0.113" />
         <entry key="app/src/main/res/drawable/gray_stroke_cornors_5.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/green_stroke_cornors_5.xml" value="0.149" />
         <entry key="app/src/main/res/drawable/white_stroke_cornors_5.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_add_location.xml" value="0.16" />
         <entry key="app/src/main/res/layout/activity_add_new_address.xml" value="0.10410334346504559" />
         <entry key="app/src/main/res/layout/activity_address_book.xml" value="0.22" />
-        <entry key="app/src/main/res/layout/activity_daily_deals.xml" value="0.10410334346504559" />
+        <entry key="app/src/main/res/layout/activity_daily_deals.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_forgot.xml" value="0.11322463768115942" />
         <entry key="app/src/main/res/layout/activity_help2.xml" value="0.12635869565217392" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.1831306990881459" />
@@ -19,7 +20,7 @@
         <entry key="app/src/main/res/layout/activity_one2_one_chat.xml" value="0.2" />
         <entry key="app/src/main/res/layout/activity_order.xml" value="0.1831306990881459" />
         <entry key="app/src/main/res/layout/activity_order_detail.xml" value="0.2" />
-        <entry key="app/src/main/res/layout/activity_order_status.xml" value="0.1831306990881459" />
+        <entry key="app/src/main/res/layout/activity_order_status.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_placing_order.xml" value="0.11322463768115942" />
         <entry key="app/src/main/res/layout/activity_ppactivity.xml" value="0.2234375" />
         <entry key="app/src/main/res/layout/activity_product_detail.xml" value="0.18" />
@@ -36,6 +37,7 @@
         <entry key="app/src/main/res/layout/drawer_header.xml" value="0.1831306990881459" />
         <entry key="app/src/main/res/layout/fav_item.xml" value="0.2140625" />
         <entry key="app/src/main/res/layout/food_item.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/fragment_account.xml" value="0.18" />
         <entry key="app/src/main/res/layout/fragment_cart.xml" value="0.10410334346504559" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.22" />
         <entry key="app/src/main/res/layout/fragment_list.xml" value="0.1" />
@@ -43,7 +45,7 @@
         <entry key="app/src/main/res/layout/grocery_category_item.xml" value="0.12" />
         <entry key="app/src/main/res/layout/image_slider_layout_item.xml" value="0.11322463768115942" />
         <entry key="app/src/main/res/layout/notification_item.xml" value="0.2" />
-        <entry key="app/src/main/res/layout/order_item.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/order_item.xml" value="0.22" />
         <entry key="app/src/main/res/layout/packaging_size_item.xml" value="0.25" />
         <entry key="app/src/main/res/layout/product_item.xml" value="0.33" />
         <entry key="app/src/main/res/layout/review_item.xml" value="0.22" />

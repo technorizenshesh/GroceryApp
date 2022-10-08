@@ -13,13 +13,16 @@ import android.view.ViewGroup;
 
 import com.user.grocery.R;
 import com.user.grocery.activities.AddressBookAct;
+import com.user.grocery.activities.LoginAct;
 import com.user.grocery.activities.One2OneChatAct;
 import com.user.grocery.activities.OrderActivity;
 import com.user.grocery.activities.ProductReviewAct;
 
 import com.user.grocery.activities.ProfileAct;
 import com.user.grocery.databinding.FragmentAccountBinding;
+import com.user.grocery.retrofit.Constant;
 import com.user.grocery.utility.BottomSheetReturn;
+import com.user.grocery.utility.SharedPreferenceUtility;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -121,6 +124,15 @@ public class AccountFragment extends Fragment {
             intent.putExtra("arg","account"); // getText() SHOULD NOT be static!!!
             startActivity(intent);
         });
+
+        binding.btnLogout.setOnClickListener(v ->
+                {
+                    SharedPreferenceUtility.getInstance(getActivity().getApplication()).putBoolean(Constant.IS_USER_LOGGED_IN, false);
+                    Intent intent = new Intent(getActivity(), LoginAct.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK |Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(intent);
+                }
+                );
 
     }
 

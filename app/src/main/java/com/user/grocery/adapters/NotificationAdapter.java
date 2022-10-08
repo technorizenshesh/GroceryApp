@@ -3,12 +3,15 @@ package com.user.grocery.adapters;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.user.grocery.R;
 import com.user.grocery.databinding.NotificationItemBinding;
 import com.user.grocery.databinding.NotificationItemBinding;
+import com.user.grocery.models.SuccessResGetNotification;
 import com.user.grocery.models.SuccessResGetNotifications;
 
 import java.util.ArrayList;
@@ -18,14 +21,15 @@ import java.util.ArrayList;
  */
 public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapter.OffersViewHolder>{
 
-     public NotificationItemBinding binding;
+    public NotificationItemBinding binding;
 
-     private Context context;
-    private ArrayList<SuccessResGetNotifications> notifications;
-     public NotificationAdapter(Context context,ArrayList<SuccessResGetNotifications> notifications)
+    private Context context;
+    private ArrayList<SuccessResGetNotification.Notification> notificationList;
+
+    public NotificationAdapter(Context context,ArrayList<SuccessResGetNotification.Notification> notificationList)
      {
          this.context = context;
-         this.notifications = notifications;
+         this.notificationList = notificationList;
      }
 
     @NonNull
@@ -37,17 +41,23 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
 
     @Override
     public void onBindViewHolder(@NonNull OffersViewHolder holder, int position) {
+        TextView textViewTitle = holder.itemView.findViewById(R.id.tvtitle);
+
+        TextView tvTimeAgo = holder.itemView.findViewById(R.id.tvQuantity);
+
+        textViewTitle.setText(notificationList.get(position).getNotificationMessage());
+
+        tvTimeAgo.setText(notificationList.get(position).getNotificationDateTime());
 
     }
 
     @Override
     public int getItemCount() {
-        return 6;
+        return notificationList.size();
     }
 
     public class OffersViewHolder extends RecyclerView.ViewHolder
     {
-
         public OffersViewHolder(NotificationItemBinding binding1) {
             super(binding1.getRoot());
         }

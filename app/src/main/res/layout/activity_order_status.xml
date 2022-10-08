@@ -73,6 +73,7 @@
             android:layout_height="wrap_content"
             android:textColor="@color/black"
             android:text="Arriving by 04:05PM"
+            android:visibility="gone"
             android:textSize="@dimen/_12sdp"
             android:layout_marginTop="@dimen/_15sdp"
             android:fontFamily="@font/montserrat_regular"/>
@@ -134,7 +135,6 @@
             android:layout_marginTop="@dimen/_20sdp"
             />
 
-
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -147,10 +147,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/_10sdp"
-
                 >
-
-
 
                 <RelativeLayout
                     android:id="@+id/rlDriver"
@@ -207,8 +204,6 @@
 
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
-
-
 
     </LinearLayout>
 

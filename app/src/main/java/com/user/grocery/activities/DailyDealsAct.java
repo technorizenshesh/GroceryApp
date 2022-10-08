@@ -43,6 +43,20 @@ public class DailyDealsAct extends AppCompatActivity {
         binding = DataBindingUtil.setContentView(this,R.layout.activity_daily_deals);
         productsViewModel = ViewModelProviders.of(this).get(ProductsViewModel.class);
 
+        binding.ivBack.setOnClickListener(v -> finish());
+
+        String passedArg = getIntent().getExtras().getString("from");
+
+        if (passedArg.equalsIgnoreCase("home"))
+        {
+
+            binding.tvtitle.setText(getString(R.string.best_offers));
+
+        }else
+        {
+            binding.tvtitle.setText(getString(R.string.best_selling));
+        }
+
         getProductsList();
 
     }
@@ -63,12 +77,9 @@ public class DailyDealsAct extends AppCompatActivity {
                 binding.rvBestDeails.setLayoutManager(new GridLayoutManager(DailyDealsAct.this,2));
                 binding.rvBestDeails.setAdapter(new BestSellerNewAdapters(DailyDealsAct.this,productsArrayList));
 
-//                adapter.notifyDataSetChanged();
             }
 
         });
     }
-
-
 
 }

@@ -51,6 +51,7 @@ public class ProfileAct extends AppCompatActivity {
 
     public void init()
     {
+
         binding.header.imgHeader.setOnClickListener(v -> finish());
         binding.header.tvtitle.setText(getString(R.string.personal_details));
 

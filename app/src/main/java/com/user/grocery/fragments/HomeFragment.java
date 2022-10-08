@@ -20,6 +20,8 @@ import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnima
 import com.smarteist.autoimageslider.SliderAnimations;
 import com.smarteist.autoimageslider.SliderView;
 import com.user.grocery.R;
+import com.user.grocery.activities.DailyDealsAct;
+import com.user.grocery.activities.HomeAct;
 import com.user.grocery.activities.ProductDetailAct;
 import com.user.grocery.activities.ProfileAct;
 import com.user.grocery.activities.SearchAct;
@@ -70,9 +72,11 @@ public class HomeFragment extends Fragment implements ItemClickListener {
         binding.rvOffers.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false));
         binding.rvOffers.setAdapter(new OffersAdapters(getActivity()));
 
-//        binding.rvBestSelling.setHasFixedSize(true);
-//        binding.rvBestSelling.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false));
-//        binding.rvBestSelling.setAdapter(new BestSellerAdapters(getActivity()));
+        binding.seeAll.setOnClickListener(v ->
+                {
+                    startActivity(new Intent(getActivity(), DailyDealsAct.class).putExtra("from",""));
+                }
+                );
 
         binding.etSearch.setOnClickListener(v ->
                 {

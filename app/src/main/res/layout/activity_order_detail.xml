@@ -75,9 +75,6 @@
 
                 </RadioGroup>
 
-
-
-
             </LinearLayout>
 
             <TextView
@@ -172,7 +169,6 @@
                     />
             </RelativeLayout>
 
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -236,6 +232,7 @@
                         android:fontFamily="@font/montserrat_semibold"
                         android:text="10 $"
                         android:textColor="@color/white" />
+
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -288,7 +285,6 @@
                 </RelativeLayout>
 
             </androidx.appcompat.widget.LinearLayoutCompat>
-
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnPay"

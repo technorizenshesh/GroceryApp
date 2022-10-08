@@ -155,10 +155,8 @@ public class ProductReviewAct extends AppCompatActivity implements PackagingClic
         btnSubmit.setOnClickListener(v ->
                 {
                     String rating = String.valueOf(ratingBar.getRating());
-
                     myRating = rating;
                     myReview = etReview.getText().toString();
-
                     if(rating.equalsIgnoreCase(""))
                     {
                         Toast.makeText(ProductReviewAct.this,"Please select Star.",Toast.LENGTH_SHORT).show();
@@ -180,7 +178,6 @@ public void addRating()
 {
 
     String userId = SharedPreferenceUtility.getInstance(ProductReviewAct.this).getString(USER_ID);
-
     DataManager.getInstance().showProgressMessage(ProductReviewAct.this, getString(R.string.please_wait));
     Map<String,String> map = new HashMap<>();
     map.put("rating_product_id",productId);
@@ -191,7 +188,6 @@ public void addRating()
     call.enqueue(new Callback<SuccessResUpdateAddress>() {
         @Override
         public void onResponse(Call<SuccessResUpdateAddress> call, Response<SuccessResUpdateAddress> response) {
-
             DataManager.getInstance().hideProgressMessage();
             try {
                 SuccessResUpdateAddress data = response.body();
@@ -201,7 +197,6 @@ public void addRating()
                 } else if (data.success == 0) {
                     showToast(ProductReviewAct.this, data.message);
                 }
-
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -232,7 +227,6 @@ public void addRating()
                     if (data.success==1) {
                         showToast(ProductReviewAct.this, data.message);
 
-
                         resultArrayList.clear();
                         resultArrayList.addAll(data.getResult());
 
@@ -240,9 +234,13 @@ public void addRating()
                         binding.rvReview.setLayoutManager(new LinearLayoutManager(ProductReviewAct.this));
                         binding.rvReview.setAdapter(new ReviewAdapter(ProductReviewAct.this,resultArrayList));
 
-
                     } else if (data.success == 0) {
                         showToast(ProductReviewAct.this, data.message);
+                        resultArrayList.clear();
+                        binding.rvReview.setHasFixedSize(true);
+                        binding.rvReview.setLayoutManager(new LinearLayoutManager(ProductReviewAct.this));
+                        binding.rvReview.setAdapter(new ReviewAdapter(ProductReviewAct.this,resultArrayList));
+
                     }
 
                 } catch (Exception e) {
@@ -257,8 +255,5 @@ public void addRating()
             }
         });
     }
-
-
-
 
 }

@@ -15,7 +15,7 @@ public class ItemQualityIssue extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-       binding = DataBindingUtil.setContentView(this,R.layout.activity_item_quality_issue);
+        binding = DataBindingUtil.setContentView(this,R.layout.activity_item_quality_issue);
 
         binding.imgHeader.setOnClickListener(v -> finish());
 

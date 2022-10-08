@@ -118,7 +118,7 @@ public class One2OneChatAct extends AppCompatActivity {
         DataManager.getInstance().showProgressMessage(One2OneChatAct.this, getString(R.string.please_wait));
         Log.d("datatest",userId);
         Map<String,String> map = new HashMap<>();
-        map.put("sender_id","1");
+        map.put("sender_id","01");
         map.put("receiver_id",userId);
 
         Call<SuccessResGetChat> call = apiInterface.getChat(map);
@@ -160,7 +160,7 @@ public class One2OneChatAct extends AppCompatActivity {
         DataManager.getInstance().showProgressMessage(this, getString(R.string.please_wait));
         Map<String,String> map = new HashMap<>();
         map.put("sender_id",userId);
-        map.put("receiver_id","1");
+        map.put("receiver_id","01");
         map.put("chat_message",strChatMessage);
 
         Call<SuccessResInsertChat> call = apiInterface.insertChat(map);
@@ -196,14 +196,10 @@ public class One2OneChatAct extends AppCompatActivity {
     @Override
     public void onStart() {
         super.onStart();
-
     }
 
     @Override
     public void onStop() {
         super.onStop();
-
     }
-
-
 }

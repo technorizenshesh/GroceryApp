@@ -52,9 +52,7 @@ public class OrderActivity extends AppCompatActivity {
 
         DataManager.getInstance().showProgressMessage(OrderActivity.this, getString(R.string.please_wait));
         myOrdersViewModel.getUserProfile().observe(this, articleResponse -> {
-
            DataManager.getInstance().hideProgressMessage();
-
             if (articleResponse != null) {
                 int status = articleResponse.getSuccess();
                 String message = articleResponse.getMessage();
@@ -71,11 +69,7 @@ public class OrderActivity extends AppCompatActivity {
                 {
                     Toast.makeText(OrderActivity.this, ""+message, Toast.LENGTH_SHORT).show();
                 }
-
             }
-
         });
     }
-
-
 }
