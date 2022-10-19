@@ -83,6 +83,7 @@
                     app:cardCornerRadius="@dimen/_8sdp"
                     android:visibility="gone"
                     >
+
                     <ImageView
                         android:layout_width="@dimen/_60sdp"
                         android:layout_height="@dimen/_60sdp"
@@ -91,10 +92,38 @@
 
             </LinearLayout>
 
+            <RelativeLayout
+                android:id="@+id/rlReturn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@drawable/gray_stroke_cornors_5"
+                android:visibility="gone"
+                >
+                <ImageView
+                    android:id="@+id/ivReturn"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/_20sdp"
+                    android:src="@drawable/ic_return"/>
+
+                <TextView
+                    android:id="@+id/tvReturns"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/ivReturn"
+                    android:drawableRight="@drawable/ic_right"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:padding="@dimen/_15sdp"
+                    android:text="@string/returns"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_13sdp" />
+
+            </RelativeLayout>
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
-
 
 </RelativeLayout>
 </layout>

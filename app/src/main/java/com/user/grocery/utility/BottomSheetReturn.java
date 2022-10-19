@@ -44,11 +44,12 @@ public class BottomSheetReturn extends BottomSheetDialogFragment {
 
     private Context context;
 
+    private ItemClickListener itemClickListener;
 
-    public BottomSheetReturn(Context context)
+    public BottomSheetReturn(Context context,ItemClickListener itemClickListener)
     {
         this.context = context;
-
+         this.itemClickListener = itemClickListener;
     }
 
     @Override public int getTheme() {
@@ -103,43 +104,57 @@ public class BottomSheetReturn extends BottomSheetDialogFragment {
 
         TextView tv5 = dialog.findViewById(R.id.tvSomethingsElse);
 
-        TextView tv6 = dialog.findViewById(R.id.tvHelp);
+
 
         tv1.setOnClickListener(v ->
                 {
-                    startActivity(new Intent(context, AddLocationAct.class));
+//                    startActivity(new Intent(context, AddLocationAct.class));
+
+                    itemClickListener.imageItemClick(v,tv1.getText().toString(),"");
                 }
                 );
 
         tv2.setOnClickListener(v ->
                 {
-                    startActivity(new Intent(context, ItemQualityIssue.class));
+//                    startActivity(new Intent(context, ItemQualityIssue.class));
+
+                    itemClickListener.imageItemClick(v,tv2.getText().toString(),"");
+
                 }
         );
 
         tv3.setOnClickListener(v ->
                 {
-                    startActivity(new Intent(context, MissingOrIncorrectItemAct.class));
+//                    startActivity(new Intent(context, MissingOrIncorrectItemAct.class));
+
+                    itemClickListener.imageItemClick(v,tv3.getText().toString(),"");
+
                 }
         );
 
         tv4.setOnClickListener(v ->
                 {
-                    startActivity(new Intent(context, OrderArrievedLateAct.class));
+//                    startActivity(new Intent(context, OrderArrievedLateAct.class));
+
+                    itemClickListener.imageItemClick(v,tv4.getText().toString(),"");
+
                 }
         );
 
         tv5.setOnClickListener(v ->
                 {
-                    startActivity(new Intent(context, ItsSomethingElse.class));
+//                    startActivity(new Intent(context, ItsSomethingElse.class));
+
+                    itemClickListener.imageItemClick(v,tv4.getText().toString(),"");
+
                 }
         );
 
-        tv6.setOnClickListener(v ->
-                {
-                    startActivity(new Intent(context, HelpAct.class));
-                }
-        );
+//        tv6.setOnClickListener(v ->
+//                {
+//                    startActivity(new Intent(context, HelpAct.class));
+//                }
+//        );
 
     }
 

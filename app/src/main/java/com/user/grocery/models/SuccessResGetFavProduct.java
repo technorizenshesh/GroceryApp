@@ -42,6 +42,4 @@ public class SuccessResGetFavProduct implements Serializable {
         this.success = success;
     }
 
-
-
 }

@@ -4,10 +4,10 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/top_white_cornors"
-    android:layout_marginTop="@dimen/_50sdp"
+    android:layout_marginTop="@dimen/_100sdp"
     android:padding="@dimen/_15sdp"
     android:minWidth="1000dp"
-    android:minHeight="400dp"
+    android:minHeight="200dp"
     android:id="@+id/root">
 
        <View
@@ -98,6 +98,7 @@
            android:fontFamily="@font/montserrat_semibold"
            android:padding="@dimen/_15sdp"
            android:text="@string/help"
+           android:visibility="gone"
            android:textColor="@color/black"
            android:drawableTint="@color/app_color"
            android:textSize="@dimen/_13sdp" />

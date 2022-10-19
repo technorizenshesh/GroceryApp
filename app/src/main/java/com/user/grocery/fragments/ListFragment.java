@@ -103,8 +103,8 @@ public class ListFragment extends Fragment implements ItemClickListener {
 
     private void getList()
     {
-        String userId = SharedPreferenceUtility.getInstance(getActivity()).getString(USER_ID);
 
+        String userId = SharedPreferenceUtility.getInstance(getActivity()).getString(USER_ID);
         DataManager.getInstance().showProgressMessage(getActivity(), getString(R.string.please_wait));
         favouriteProductsViewModel.getUserProfile(userId).observe(getViewLifecycleOwner(), articleResponse -> {
 
@@ -123,41 +123,37 @@ public class ListFragment extends Fragment implements ItemClickListener {
                 }
                 else
                 {
+                    favProductArrayList.clear();
+                    itemListAdapters = new ItemListAdapters(getActivity(),favProductArrayList,ListFragment.this);
+                    binding.setListAdapter(itemListAdapters);
                     Toast.makeText(getActivity(), ""+message, Toast.LENGTH_SHORT).show();
                 }
-
             }
-
         });
     }
 
     @Override
     public void imageItemClick(View v, String id, String category) {
-
         updateFav(id);
-
     }
 
     public void updateFav(String productId)
     {
 
         String userId = SharedPreferenceUtility.getInstance(getActivity()).getString(USER_ID);
-
         DataManager.getInstance().showProgressMessage(getActivity(), getString(R.string.please_wait));
-
         updateFavViewModel.getProductDetailsLiveData(userId,productId,getActivity()).observe(this, articleResponse -> {
-
             DataManager.getInstance().hideProgressMessage();
-
             if (articleResponse != null) {
-
                 data = articleResponse;
 
                 if (data.success==1) {
 
+                    updateFavViewModel = ViewModelProviders.of(this).get(UpdateFavViewModel.class);
                     getList();
 
                 } else if (data.success==0) {
+                    updateFavViewModel = ViewModelProviders.of(this).get(UpdateFavViewModel.class);
                     getList();
                 }
 
@@ -166,6 +162,5 @@ public class ListFragment extends Fragment implements ItemClickListener {
         });
 
     }
-
 
 }

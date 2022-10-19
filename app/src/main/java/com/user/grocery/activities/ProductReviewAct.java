@@ -51,57 +51,41 @@ import static com.user.grocery.retrofit.Constant.showToast;
 public class ProductReviewAct extends AppCompatActivity implements PackagingClickListener {
 
     ActivityProductReviewBinding binding;
-
     private GetMyOrdersViewModel myOrdersViewModel;
-
     private ArrayList<SuccessResGetMyOrders.Result> myOrdersList = new ArrayList<>();
-
     private String myRating="",myReview="";
     private ArrayList<SuccessResGetReviews.Result> resultArrayList = new ArrayList<>();
     private GroceryInterface apiInterface;
-
     private int selectPosition = 0;
-
     private Dialog dialog;
-
     private String productId="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this,R.layout.activity_product_review);
-
         apiInterface = ApiClient.getClient().create(GroceryInterface.class);
-
         binding.header.imgHeader.setOnClickListener(v -> finish());
         binding.header.tvtitle.setText(getString(R.string.product_reviews));
-
         myOrdersViewModel = ViewModelProviders.of(ProductReviewAct.this).get(GetMyOrdersViewModel.class);
-
         if (NetworkAvailablity.checkNetworkStatus(this)) {
             getList();
         } else {
             Toast.makeText(this, getResources().getString(R.string.msg_noInternet), Toast.LENGTH_SHORT).show();
         }
-
-
-
         binding.btnLogin.setOnClickListener(v ->
                 {
                     showImageSelection();
                 }
                 );
-
     }
 
     private void getList()
     {
-
         DataManager.getInstance().showProgressMessage(ProductReviewAct.this, getString(R.string.please_wait));
         myOrdersViewModel.getUserProfile().observe(this, articleResponse -> {
-
             DataManager.getInstance().hideProgressMessage();
-
             if (articleResponse != null) {
                 int status = articleResponse.getSuccess();
                 String message = articleResponse.getMessage();
@@ -119,35 +103,28 @@ public class ProductReviewAct extends AppCompatActivity implements PackagingClic
                     binding.btnLogin.setVisibility(View.GONE);
                     Toast.makeText(ProductReviewAct.this, ""+message, Toast.LENGTH_SHORT).show();
                 }
-
             }
-
         });
     }
 
     @Override
     public void packageItemClick(View v, int position, String category) {
-
         productId = myOrdersList.get(position).getBookingProductId();
-
         getRating();
-
     }
 
     public void showImageSelection() {
 
-       dialog = new Dialog(ProductReviewAct.this);
+        dialog = new Dialog(ProductReviewAct.this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.getWindow().getAttributes().windowAnimations = android.R.style.Widget_Material_ListPopupWindow;
         dialog.setContentView(R.layout.dialog_show_image_selection);
         WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
         Window window = dialog.getWindow();
         lp.copyFrom(window.getAttributes());
-
         lp.width = WindowManager.LayoutParams.MATCH_PARENT;
         lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
         window.setAttributes(lp);
-
         AppCompatButton btnSubmit = dialog.findViewById(R.id.btnLogin);
         EditText etReview = dialog.findViewById(R.id.etReview);
         RatingBar ratingBar = dialog.findViewById(R.id.ratingBar);
@@ -176,7 +153,6 @@ public class ProductReviewAct extends AppCompatActivity implements PackagingClic
 
 public void addRating()
 {
-
     String userId = SharedPreferenceUtility.getInstance(ProductReviewAct.this).getString(USER_ID);
     DataManager.getInstance().showProgressMessage(ProductReviewAct.this, getString(R.string.please_wait));
     Map<String,String> map = new HashMap<>();
@@ -194,6 +170,7 @@ public void addRating()
                 if (data.success==1) {
                     showToast(ProductReviewAct.this, data.message);
                     dialog.dismiss();
+                    getRating();
                 } else if (data.success == 0) {
                     showToast(ProductReviewAct.this, data.message);
                 }
@@ -212,7 +189,6 @@ public void addRating()
 
     public void getRating()
     {
-
         DataManager.getInstance().showProgressMessage(ProductReviewAct.this, getString(R.string.please_wait));
         Map<String,String> map = new HashMap<>();
         map.put("rating_product_id",productId);
@@ -220,34 +196,28 @@ public void addRating()
         call.enqueue(new Callback<SuccessResGetReviews>() {
             @Override
             public void onResponse(Call<SuccessResGetReviews> call, Response<SuccessResGetReviews> response) {
-
                 DataManager.getInstance().hideProgressMessage();
                 try {
                     SuccessResGetReviews data = response.body();
                     if (data.success==1) {
                         showToast(ProductReviewAct.this, data.message);
-
+                        binding.tvRating.setText(data.getAverageRating());
                         resultArrayList.clear();
                         resultArrayList.addAll(data.getResult());
-
                         binding.rvReview.setHasFixedSize(true);
                         binding.rvReview.setLayoutManager(new LinearLayoutManager(ProductReviewAct.this));
                         binding.rvReview.setAdapter(new ReviewAdapter(ProductReviewAct.this,resultArrayList));
-
                     } else if (data.success == 0) {
                         showToast(ProductReviewAct.this, data.message);
                         resultArrayList.clear();
                         binding.rvReview.setHasFixedSize(true);
                         binding.rvReview.setLayoutManager(new LinearLayoutManager(ProductReviewAct.this));
                         binding.rvReview.setAdapter(new ReviewAdapter(ProductReviewAct.this,resultArrayList));
-
                     }
-
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
-
             @Override
             public void onFailure(Call<SuccessResGetReviews> call, Throwable t) {
                 call.cancel();
@@ -255,5 +225,4 @@ public void addRating()
             }
         });
     }
-
 }

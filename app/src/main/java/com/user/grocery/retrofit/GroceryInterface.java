@@ -6,6 +6,7 @@ import com.user.grocery.models.SuccessResGetBanner;
 import com.user.grocery.models.SuccessResGetCategories;
 import com.user.grocery.models.SuccessResGetChat;
 import com.user.grocery.models.SuccessResGetFavProduct;
+import com.user.grocery.models.SuccessResGetHelp;
 import com.user.grocery.models.SuccessResGetMyOrders;
 import com.user.grocery.models.SuccessResGetNotification;
 import com.user.grocery.models.SuccessResGetNotificationCount;
@@ -34,23 +35,18 @@ import retrofit2.http.POST;
 import retrofit2.http.Part;
 
 public interface GroceryInterface {
-
     @FormUrlEncoded
     @POST("signup")
     Call<SuccessResSignup> signup(@FieldMap Map<String, String> paramHashMap);
-
     @FormUrlEncoded
     @POST("login")
     Call<SuccessResLogin> login(@FieldMap Map<String, String> paramHashMap);
-
     @FormUrlEncoded
     @POST("forgot_password")
     Call<SuccessResUpdateAddress> forgotPassword(@FieldMap Map<String, String> paramHashMap);
-
     @FormUrlEncoded
     @POST("get_profile")
     Call<SuccessResGetProfile> getProfile(@FieldMap Map<String, String> paramHashMap);
-
     @FormUrlEncoded
     @POST("update_address")
     Call<SuccessResUpdateAddress> updateAddress(@FieldMap Map<String, String> paramHashMap);
@@ -66,11 +62,9 @@ public interface GroceryInterface {
     @FormUrlEncoded
     @POST("get_banners")
     Call<SuccessResGetBanner> getBanners(@FieldMap Map<String, String> paramHashMap);
-
     @FormUrlEncoded
     @POST("get_categories")
     Call<SuccessResGetCategories> getCategoris(@FieldMap Map<String, String> paramHashMap);
-
     @FormUrlEncoded
     @POST("get_products")
     Call<SuccessResGetProducts> getProducts(@FieldMap Map<String, String> paramHashMap);
@@ -82,42 +76,32 @@ public interface GroceryInterface {
     @FormUrlEncoded
     @POST("fav_product")
     Call<SuccessResSignup> updateFavProducts(@FieldMap Map<String, String> paramHashMap);
-
     @FormUrlEncoded
     @POST("get_suggested_products_by_category")
     Call<SuccessResGetProducts> getSuggestedProducts(@FieldMap Map<String, String> paramHashMap);
-
     @FormUrlEncoded
     @POST("get_fav_products_by_user_id")
     Call<SuccessResGetFavProduct> getFavouriteProduct(@FieldMap Map<String, String> paramHashMap);
-
     @FormUrlEncoded
     @POST("add_address")
     Call<SuccessResUpdateAddress> addAddress(@FieldMap Map<String, String> paramHashMap);
-
     @FormUrlEncoded
     @POST("get_address_list")
     Call<SuccessResGetAddress> getAddress(@FieldMap Map<String, String> paramHashMap);
-
     @FormUrlEncoded
     @POST("update_addresss")
     Call<SuccessResUpdateAddress> editAddress(@FieldMap Map<String, String> paramHashMap);
-
     @FormUrlEncoded
     @POST("delete_address")
     Call<SuccessResUpdateAddress> deleteAddress(@FieldMap Map<String, String> paramHashMap);
-
     @FormUrlEncoded
     @POST("get_search_products")
     Call<SuccessResGetProducts> getProductSearch(@FieldMap Map<String, String> paramHashMap);
-
     @FormUrlEncoded
     @POST("get_products_by_category")
     Call<SuccessResGetProductsByCategory> getProductsByCategory(@FieldMap Map<String, String> paramHashMap);
-
     @GET("get_gift_vouchers")
     Call<SuccessResGetVoucher> getVoucher();
-
     @FormUrlEncoded
     @POST("get_booking")
     Call<ResponseBody> book(@FieldMap Map<String, String> paramHashMap);
@@ -153,5 +137,21 @@ public interface GroceryInterface {
     @FormUrlEncoded
     @POST("getnotificationCount")
     Call<SuccessResGetNotificationCount> getNotificationCount(@FieldMap Map<String, String> paramHashMap);
+
+    @FormUrlEncoded
+    @POST("get_faq_help")
+    Call<SuccessResGetHelp> getHelp(@FieldMap Map<String, String> paramHashMap);
+
+    @FormUrlEncoded
+    @POST("get_products_by_banner")
+    Call<SuccessResGetProducts> getProductsByBanner(@FieldMap Map<String, String> paramHashMap);
+
+    @FormUrlEncoded
+    @POST("driver_accept_and_Cancel_order")
+    Call<ResponseBody> orderAccept(@FieldMap Map<String, String> paramHashMap);
+
+    @FormUrlEncoded
+    @POST("resend_booking")
+    Call<SuccessResUpdateAddress> reorderProduct(@FieldMap Map<String, String> paramHashMap);
 
 }

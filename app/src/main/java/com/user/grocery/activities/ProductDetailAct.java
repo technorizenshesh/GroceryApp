@@ -175,11 +175,9 @@ public class ProductDetailAct extends AppCompatActivity implements ItemClickList
         suggestedProductsViewModel.getUserProfile(categoryId).observe(ProductDetailAct.this, articleResponse -> {
             DataManager.getInstance().hideProgressMessage();
             if (articleResponse != null) {
-
                 DataManager.getInstance().hideProgressMessage();
                 productsArrayList.clear();
                 productsArrayList.addAll(articleResponse.getUserData());
-
                 bestSellerAdapters = new BestSellerAdapters(ProductDetailAct.this,productsArrayList,ProductDetailAct.this);
                 binding.setProductsAdapter(bestSellerAdapters);
             }
@@ -188,9 +186,7 @@ public class ProductDetailAct extends AppCompatActivity implements ItemClickList
 
     @Override
     public void imageItemClick(View v, String id,String category) {
-
         startActivity(new Intent(ProductDetailAct.this, ProductDetailAct.class).putExtra("productId", id).putExtra("categoryId", categoryId));
-
     }
 
     @Override

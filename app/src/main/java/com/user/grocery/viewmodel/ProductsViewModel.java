@@ -26,7 +26,6 @@ public class ProductsViewModel extends AndroidViewModel {
         super(application);
         profileRepository = new GroceryRepository();
 
-
         successResGetBannerLiveData = profileRepository.getProducts();
     }
 

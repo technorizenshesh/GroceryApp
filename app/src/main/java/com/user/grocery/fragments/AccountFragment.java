@@ -95,13 +95,13 @@ public class AccountFragment extends Fragment {
             startActivity(new Intent(getActivity(), OrderActivity.class));
         });
 
-        binding.rlReturn.setOnClickListener(v ->
-                {
-                    bottomSheetFragment= new BottomSheetReturn(getActivity());
-
-                    bottomSheetFragment.show(getActivity().getSupportFragmentManager(),"ModalBottomSheet");
-                }
-                );
+//        binding.rlReturn.setOnClickListener(v ->
+//                {
+//                    bottomSheetFragment= new BottomSheetReturn(getActivity());
+//
+//                    bottomSheetFragment.show(getActivity().getSupportFragmentManager(),"ModalBottomSheet");
+//                }
+//                );
 
         binding.rlPersonalDetail.setOnClickListener(v ->
         {

@@ -1,6 +1,7 @@
 package com.user.grocery.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +14,7 @@ import androidx.navigation.Navigation;
 import com.bumptech.glide.Glide;
 import com.smarteist.autoimageslider.SliderViewAdapter;
 import com.user.grocery.R;
+import com.user.grocery.activities.BannerProductAct;
 import com.user.grocery.models.SuccessResGetBanner;
 
 import java.util.ArrayList;
@@ -46,6 +48,15 @@ public class SliderAdapter extends SliderViewAdapter<SliderAdapter.SliderAdapter
                 .load(myProductModeList.get(position).getImage())
                 .fitCenter()
                 .into(viewHolder.imageViewBackground);
+
+        viewHolder.imageViewBackground.setOnClickListener(v ->
+                {
+                    Intent intent = new Intent(context, BannerProductAct.class);
+                    intent.putExtra("arg",myProductModeList.get(position).getId() ); // getText() SHOULD NOT be static!!!
+                    context.startActivity(intent);
+
+                }
+                );
 
     }
 

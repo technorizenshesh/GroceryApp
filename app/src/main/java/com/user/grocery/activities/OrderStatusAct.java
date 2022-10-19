@@ -18,6 +18,7 @@ public class OrderStatusAct extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this,R.layout.activity_order_status);
         Gson gson = new Gson();

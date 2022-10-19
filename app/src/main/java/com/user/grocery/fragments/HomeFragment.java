@@ -136,17 +136,12 @@ public class HomeFragment extends Fragment implements ItemClickListener {
                 productsArrayList.addAll(articleResponse.getUserData());
                 bestSellerAdapters = new BestSellerAdapters(getActivity(),productsArrayList,HomeFragment.this);
                 binding.setProductsAdapter(bestSellerAdapters);
-
             }
-
         });
     }
 
     @Override
     public void imageItemClick(View v, String id,String categoryId) {
-
-        startActivity(new Intent(getActivity(), ProductDetailAct.class).putExtra("productId", id).putExtra("categoryId", categoryId));
-
+     startActivity(new Intent(getActivity(), ProductDetailAct.class).putExtra("productId", id).putExtra("categoryId", categoryId));
     }
-
 }

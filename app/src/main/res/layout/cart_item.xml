@@ -103,9 +103,9 @@
             android:layout_marginTop="@dimen/_5sdp"
             android:background="@drawable/button_bg"
             android:fontFamily="@font/montserrat_medium"
+            android:onClick="@{(view) -> clickListener.imageItemClick(view,favProduct.bookingProductId,favProduct.bookingProductId)}"
             android:paddingHorizontal="@dimen/_13sdp"
             android:paddingVertical="@dimen/_5sdp"
-            android:onClick="@{(view) -> clickListener.imageItemClick(view,favProduct.bookingProductId,favProduct.bookingProductId)}"
             android:text="@string/re_order"
             android:textColor="@color/white"
             android:textSize="@dimen/_12sdp" />

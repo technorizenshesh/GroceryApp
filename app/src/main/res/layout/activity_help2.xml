@@ -7,16 +7,11 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".activities.HelpAct">
-
     <include layout="@layout/header_layout" android:id="@+id/header"/>
-    <WebView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvScheduleTime"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="@dimen/_15sdp"
-        android:textSize="@dimen/_12sdp"
-        android:fontFamily="@font/montserrat_regular"
-        android:textColor="@color/black"
      />
-
 </LinearLayout>
 </layout>
